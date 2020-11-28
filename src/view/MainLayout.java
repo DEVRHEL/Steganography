@@ -5,13 +5,23 @@
  */
 package view;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.LayoutManager;
 import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
 import java.io.File;
+import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import javax.imageio.ImageIO;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -23,10 +33,12 @@ import model.AverageLsb;
 import model.ChiSquare;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import model.Steganography;
 import org.math.plot.Plot2DPanel;
 import org.math.plot.plotObjects.BaseLabel;
-
+import model.*;
+import sun.awt.image.ToolkitImage;
 /**
  *
  * @author master
@@ -92,7 +104,7 @@ public class MainLayout extends javax.swing.JFrame {
         btnDetect = new javax.swing.JButton();
         btnSelectImageDetect1 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
-        paL = new javax.swing.JScrollPane();
+        graphyTab = new javax.swing.JTabbedPane();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -204,7 +216,7 @@ public class MainLayout extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelEncodeImage, javax.swing.GroupLayout.PREFERRED_SIZE, 666, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(EncodeButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(publicKeyButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -281,7 +293,7 @@ public class MainLayout extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(decodeText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,7 +342,7 @@ public class MainLayout extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSaveKeyFolder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnGenKey, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(648, Short.MAX_VALUE))
+                .addContainerGap(656, Short.MAX_VALUE))
         );
         GenKeyPanelLayout.setVerticalGroup(
             GenKeyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -367,24 +379,26 @@ public class MainLayout extends javax.swing.JFrame {
             }
         });
 
+        graphyTab.setToolTipText("");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(detectImage, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(paL))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnSelectImageDetect1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(564, 564, 564)
-                        .addComponent(btnDetect, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnDetect, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(detectImage, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(graphyTab, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,11 +409,11 @@ public class MainLayout extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnSelectImageDetect1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(detectImage, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
-                    .addComponent(paL))
-                .addContainerGap(81, Short.MAX_VALUE))
+                    .addComponent(graphyTab, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
+                    .addComponent(detectImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Detect", jPanel2);
@@ -568,8 +582,9 @@ public class MainLayout extends javax.swing.JFrame {
         else {
             showMessageDialog(null, "Bạn chưa nhập đầy đủ thông tin");
         }
+        
     }//GEN-LAST:event_DecodeButtonActionPerformed
-
+    
     private void decodeTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decodeTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_decodeTextActionPerformed
@@ -578,44 +593,58 @@ public class MainLayout extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(this.pathImageDetect.getSelectedFile() != null)
 	{
-            BufferedImage image = getImage(pathImageDetect.getSelectedFile().toString());
-            int size = Integer.parseInt("2048");
-            int nbBlocks = ((3*image.getWidth()*image.getHeight())/size) - 1;
-            double[] x = new double[nbBlocks];
-            double[] chi = new double[nbBlocks];
-            double[] averageLSB = new double[nbBlocks];
-            if(type == 0)
+            try
             {
-                AverageLsb.averageLsbAttackTopToBottom(image, x, averageLSB, size);
-                ChiSquare.chiSquareAttackTopToBottom(image, x, chi, size);
+                BufferedImage image = getImage(pathImageDetect.getSelectedFile().toString());
+                int size = Integer.parseInt("2048");
+                int nbBlocks = ((3*image.getWidth()*image.getHeight())/size) - 1;
+                double[] x = new double[nbBlocks];
+                double[] chi = new double[nbBlocks];
+                double[] averageLSB = new double[nbBlocks];
+                if(type == 0)
+                {
+                    AverageLsb.averageLsbAttackTopToBottom(image, x, averageLSB, size);
+                    ChiSquare.chiSquareAttackTopToBottom(image, x, chi, size);
+                }
+                else if(type == 1)
+                {
+                    AverageLsb.averageLsbAttackLeftToRight(image, x, averageLSB, size);
+                    ChiSquare.chiSquareAttackLeftToRight(image, x, chi, size);
+                }
+                else if(type == 2) 
+                {
+                    AverageLsb.averageLsbAttackBottomToTop(image, x, averageLSB, size);
+                    ChiSquare.chiSquareAttackBottomToTop(image, x, chi, size);
+                }
+                else 
+                {
+                    AverageLsb.averageLsbAttackRightToLeft(image, x, averageLSB, size);
+                    ChiSquare.chiSquareAttackRightToLeft(image, x, chi, size);
+                }
+                chiSquarePanel.removeAllPlots();
+                chiSquarePanel.addLinePlot("Trung bình LSB", x, averageLSB);
+                BaseLabel title = new BaseLabel("Tấn công bằng phương pháp Chi bình phương",null, 0.5, 1.1);
+                title.setFont(new Font("Courier", Font.BOLD, 20));
+                chiSquarePanel.addPlotable(title);
+                chiSquarePanel.addLinePlot("Giá trị Chi-Square", x, chi);
+                chiSquarePanel.changePlotColor(0, Color.MAGENTA);
+                chiSquarePanel.changePlotColor(1, Color.GREEN);
+                chiSquarePanel.addLegend("EAST");
+                chiSquarePanel.setAxisLabel(0, size+"-KB");
+                chiSquarePanel.setAxisLabel(1, "p");
+                
+                graphyTab.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+                graphyTab.setTabPlacement(JTabbedPane.RIGHT);
+                chiSquarePanel.removePlotToolBar();
+
+                graphyTab.addTab("", null, chiSquarePanel, null);
             }
-            else if(type == 1)
+            catch (Exception e)
             {
-		AverageLsb.averageLsbAttackLeftToRight(image, x, averageLSB, size);
-		ChiSquare.chiSquareAttackLeftToRight(image, x, chi, size);
+                e.printStackTrace();
+                 JOptionPane.showMessageDialog(null, "Không thể đọc được file", 
+                        "Error!", JOptionPane.ERROR_MESSAGE);
             }
-            else if(type == 2) 
-            {
-		AverageLsb.averageLsbAttackBottomToTop(image, x, averageLSB, size);
-		ChiSquare.chiSquareAttackBottomToTop(image, x, chi, size);
-            }
-            else 
-            {
-                AverageLsb.averageLsbAttackRightToLeft(image, x, averageLSB, size);
-                ChiSquare.chiSquareAttackRightToLeft(image, x, chi, size);
-            }
-					
-            chiSquarePanel.removeAllPlots();
-            chiSquarePanel.addScatterPlot("Average LSB", x, averageLSB);
-            BaseLabel title = new BaseLabel("Chi-Square and Average LSB",null, 0.5, 1.1);
-            title.setFont(new Font("Courier", Font.BOLD, 20));
-            chiSquarePanel.addPlotable(title);
-            chiSquarePanel.addLinePlot("Chi-Square", x, chi);
-            chiSquarePanel.addLegend("EAST");
-            chiSquarePanel.setAxisLabel(0, size+"-byte data block");
-            chiSquarePanel.setAxisLabel(1, "Average LSB value (blue)\np-value of Chi-Square test (red)");
-            //jTabbedPane1.addTab("Chi-Square", null, chiSquarePanel, null);
-            paL.add(chiSquarePanel);
 	}
     }//GEN-LAST:event_btnDetectActionPerformed
 
@@ -698,6 +727,7 @@ public class MainLayout extends javax.swing.JFrame {
     private javax.swing.JTextField decodeText;
     private javax.swing.JLabel detectImage;
     private javax.swing.JTextField encodeText;
+    private javax.swing.JTabbedPane graphyTab;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
@@ -717,7 +747,6 @@ public class MainLayout extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel labelDecodeImage;
     private javax.swing.JLabel labelEncodeImage;
-    private javax.swing.JScrollPane paL;
     private javax.swing.JButton privateKeyButton;
     private javax.swing.JButton publicKeyButton;
     private javax.swing.JButton selectImageDecodeButton;
