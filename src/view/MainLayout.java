@@ -783,7 +783,7 @@ public class MainLayout extends javax.swing.JFrame {
             {
                 BufferedImage image = getImage(pathImageDetect.getSelectedFile().toString());
                 int size = Integer.parseInt("2048");
-                int nbBlocks = ((3*image.getWidth()*image.getHeight())/size) - 1;
+                int nbBlocks = ((3*image.getWidth()*image.getHeight())/size) - 1; /* So what do we see? First, there is a little bit more than 8 vertical zones. Which means that we can hide a little bit more than 8 kb of data. Why? Because the Beat Girl image is 98x225 pixels. One pixel can be used to hide three bits (one in the LSB of each RGB color tone). So we can hide (98x225)x3 bits. To get the number of kilobytes, we divide by 8 and by 1024: ((98x225)x3)/(8x1024). Well, that should be around 8.1 kilobytes. */
                 double[] x = new double[nbBlocks];
                 double[] chi = new double[nbBlocks];
                 double[] averageLSB = new double[nbBlocks];

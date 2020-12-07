@@ -33,7 +33,10 @@ public class ChiSquare {
 			values[i] = 1;
 			x[i] = i;
 		}
-
+                // 1. dau tien no se dem số lần xuất hiện các giá trị màu vào mảng values
+                // 2. No se chay tung hang hoac cot tuy theo dang tu tren xuong, duoi len, trai phai, phai trai thì cu 2048/lan chay
+                // 3. Neu sau khi dem het vượt ngưỡng size là block thi dung lại va xu ly Chi-Square
+                // 4. Sau do xu ly tiep cho den khi het pixel anh
 		for(int j=0; j<height; j++)
 		{
 			for(int i=0; i<width; i++)
