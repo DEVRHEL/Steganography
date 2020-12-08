@@ -189,7 +189,7 @@ public class Steganography {
 		try
 		{
 			encode_text(img, len,  0); //0 first positiong
-			encode_text(img, msg, 32); //4 bytes of space for length: 4bytes*8bit = 32 bits
+			encode_text(img, msg, 32); //4 bytes of space for length: 4bytes*8bit = 32 bits để giấu đc 32 bit thì cần 32 byte LSB để giấu
 		}
 		catch(Exception e)
 		{
