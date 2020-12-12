@@ -808,13 +808,13 @@ public class MainLayout extends javax.swing.JFrame {
                     ChiSquare.chiSquareAttackRightToLeft(image, x, chi, size);
                 }
                 chiSquarePanel.removeAllPlots();
-                chiSquarePanel.addLinePlot("Trung bình LSB", x, averageLSB);
+                //chiSquarePanel.addLinePlot("Trung bình LSB", x, averageLSB);
                 BaseLabel title = new BaseLabel("Tấn công bằng phương pháp Chi bình phương",null, 0.5, 1.1);
                 title.setFont(new Font("Courier", Font.BOLD, 20));
                 chiSquarePanel.addPlotable(title);
                 chiSquarePanel.addLinePlot("Giá trị Chi-Square", x, chi);
                 chiSquarePanel.changePlotColor(0, Color.MAGENTA);
-                chiSquarePanel.changePlotColor(1, Color.GREEN);
+                // chiSquarePanel.changePlotColor(1, Color.GREEN);
                 chiSquarePanel.addLegend("EAST");
                 chiSquarePanel.setAxisLabel(0, size+"-KB");
                 chiSquarePanel.setAxisLabel(1, "p");
