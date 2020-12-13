@@ -449,12 +449,12 @@
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="labelEncodeImage" min="-2" pref="1024" max="-2" attributes="0"/>
                       <EmptySpace pref="59" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="EncodeButton" alignment="1" min="-2" pref="311" max="-2" attributes="0"/>
-                          <Component id="publicKeyButton" alignment="1" min="-2" pref="311" max="-2" attributes="0"/>
-                          <Component id="encodeText" alignment="1" min="-2" pref="311" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="1" min="-2" pref="311" max="-2" attributes="0"/>
-                          <Component id="selectImageEncodeButton" alignment="1" min="-2" pref="311" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="EncodeButton" alignment="1" pref="311" max="32767" attributes="0"/>
+                          <Component id="publicKeyButton" alignment="1" pref="311" max="32767" attributes="0"/>
+                          <Component id="jLabel2" alignment="1" pref="311" max="32767" attributes="0"/>
+                          <Component id="selectImageEncodeButton" alignment="1" pref="311" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
@@ -468,8 +468,8 @@
                           <Component id="labelEncodeImage" min="-2" pref="640" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="jLabel2" min="-2" pref="22" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                              <Component id="encodeText" min="-2" pref="282" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="284" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="selectImageEncodeButton" min="-2" pref="49" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -492,11 +492,6 @@
                   </Border>
                 </Property>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="encodeText">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="encodeTextActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="publicKeyButton">
               <Properties>
@@ -549,6 +544,21 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectImageEncodeButtonActionPerformed"/>
               </Events>
             </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="encodeText">
+                  <Properties>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="rows" type="int" value="5"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel3">
@@ -567,16 +577,12 @@
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Component id="labelDecodeImage" min="-2" pref="1024" max="-2" attributes="0"/>
                       <EmptySpace pref="66" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                              <Component id="DecodeButton" alignment="1" min="-2" pref="311" max="-2" attributes="0"/>
-                              <Component id="privateKeyButton" alignment="1" min="-2" pref="311" max="-2" attributes="0"/>
-                              <Component id="selectImageDecodeButton" alignment="1" min="-2" pref="311" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                              <Component id="decodeText" alignment="1" min="-2" pref="311" max="-2" attributes="0"/>
-                              <Component id="jLabel3" alignment="1" min="-2" pref="311" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="DecodeButton" alignment="0" pref="311" max="32767" attributes="0"/>
+                          <Component id="privateKeyButton" alignment="0" pref="311" max="32767" attributes="0"/>
+                          <Component id="selectImageDecodeButton" alignment="0" pref="311" max="32767" attributes="0"/>
+                          <Component id="jLabel3" alignment="0" pref="311" max="32767" attributes="0"/>
+                          <Component id="jScrollPane3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
@@ -595,8 +601,8 @@
                               <Component id="DecodeButton" min="-2" pref="49" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                               <Component id="jLabel3" min="-2" pref="22" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                              <Component id="decodeText" max="32767" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jScrollPane3" max="32767" attributes="0"/>
                           </Group>
                           <Component id="labelDecodeImage" min="-2" pref="640" max="-2" attributes="0"/>
                       </Group>
@@ -663,11 +669,21 @@
                 <Property name="text" type="java.lang.String" value="* &#x110;o&#x1ea1;n message &#x111;&#xe3; gi&#x1ea5;u:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="decodeText">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="decodeTextActionPerformed"/>
-              </Events>
-            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="jTextArea1">
+                  <Properties>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="rows" type="int" value="5"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="GenKeyPanel">
@@ -759,9 +775,8 @@
                           <Group type="102" attributes="0">
                               <Component id="btnSelectImageDetect1" min="-2" pref="154" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jComboBox1" min="-2" pref="143" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="564" max="-2" attributes="0"/>
                               <Component id="btnDetect" min="-2" pref="154" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="detectImage" min="-2" pref="409" max="-2" attributes="0"/>
@@ -778,11 +793,8 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnSelectImageDetect1" pref="45" max="32767" attributes="0"/>
                           <Component id="btnDetect" max="32767" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnSelectImageDetect1" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
@@ -835,30 +847,6 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSelectImageDetect1ActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox1">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Tr&#xea;n xu&#x1ed1;ng d&#x1b0;&#x1edb;i"/>
-                    <StringItem index="1" value="Tr&#xe1;i sang ph&#x1ea3;i"/>
-                    <StringItem index="2" value="D&#x1b0;&#x1edb;i l&#xea;n tr&#xea;n"/>
-                    <StringItem index="3" value="Ph&#x1ea3;i sang tr&#xe1;i"/>
-                  </StringArray>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                    <EtchetBorder/>
-                  </Border>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="MainLayout_jComboBox1"/>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
             </Component>
             <Container class="javax.swing.JTabbedPane" name="graphyTab">
               <Properties>

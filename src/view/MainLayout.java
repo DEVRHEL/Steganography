@@ -99,18 +99,20 @@ public class MainLayout extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         labelEncodeImage = new javax.swing.JLabel();
-        encodeText = new javax.swing.JTextField();
         publicKeyButton = new javax.swing.JButton();
         javax.swing.JButton EncodeButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         selectImageEncodeButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        encodeText = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         labelDecodeImage = new javax.swing.JLabel();
         selectImageDecodeButton = new javax.swing.JButton();
         privateKeyButton = new javax.swing.JButton();
         javax.swing.JButton DecodeButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        decodeText = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         GenKeyPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnGenKey = new javax.swing.JButton();
@@ -119,7 +121,6 @@ public class MainLayout extends javax.swing.JFrame {
         detectImage = new javax.swing.JLabel();
         btnDetect = new javax.swing.JButton();
         btnSelectImageDetect1 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
         graphyTab = new javax.swing.JTabbedPane();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
@@ -343,12 +344,6 @@ public class MainLayout extends javax.swing.JFrame {
 
         labelEncodeImage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        encodeText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                encodeTextActionPerformed(evt);
-            }
-        });
-
         publicKeyButton.setText("Public Key");
         publicKeyButton.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         publicKeyButton.addActionListener(new java.awt.event.ActionListener() {
@@ -376,6 +371,10 @@ public class MainLayout extends javax.swing.JFrame {
             }
         });
 
+        encodeText.setColumns(20);
+        encodeText.setRows(5);
+        jScrollPane1.setViewportView(encodeText);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -384,12 +383,12 @@ public class MainLayout extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addComponent(labelEncodeImage, javax.swing.GroupLayout.PREFERRED_SIZE, 1024, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(EncodeButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(publicKeyButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(encodeText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(selectImageEncodeButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(EncodeButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                    .addComponent(publicKeyButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                    .addComponent(selectImageEncodeButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(31, 31, 31))
         );
         jPanel1Layout.setVerticalGroup(
@@ -400,8 +399,8 @@ public class MainLayout extends javax.swing.JFrame {
                     .addComponent(labelEncodeImage, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)
-                        .addComponent(encodeText, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(selectImageEncodeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -441,11 +440,9 @@ public class MainLayout extends javax.swing.JFrame {
 
         jLabel3.setText("* Đoạn message đã giấu:");
 
-        decodeText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                decodeTextActionPerformed(evt);
-            }
-        });
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane3.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -455,14 +452,12 @@ public class MainLayout extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addComponent(labelDecodeImage, javax.swing.GroupLayout.PREFERRED_SIZE, 1024, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(DecodeButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(privateKeyButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(selectImageDecodeButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(decodeText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(DecodeButton, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                    .addComponent(privateKeyButton, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                    .addComponent(selectImageDecodeButton, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3))
                 .addGap(21, 21, 21))
         );
         jPanel3Layout.setVerticalGroup(
@@ -478,8 +473,8 @@ public class MainLayout extends javax.swing.JFrame {
                         .addComponent(DecodeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(63, 63, 63)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)
-                        .addComponent(decodeText))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane3))
                     .addComponent(labelDecodeImage, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
@@ -548,14 +543,6 @@ public class MainLayout extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Trên xuống dưới", "Trái sang phải", "Dưới lên trên", "Phải sang trái" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
         graphyTab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         graphyTab.setToolTipText("");
 
@@ -569,9 +556,8 @@ public class MainLayout extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnSelectImageDetect1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(564, 564, 564)
-                        .addComponent(btnDetect, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnDetect, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(detectImage, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -583,10 +569,8 @@ public class MainLayout extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnDetect, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSelectImageDetect1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnSelectImageDetect1, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(btnDetect, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -617,10 +601,6 @@ public class MainLayout extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void encodeTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encodeTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_encodeTextActionPerformed
 
     private void btnGenKeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenKeyActionPerformed
         // TODO add your handling code here:
@@ -751,7 +731,7 @@ public class MainLayout extends javax.swing.JFrame {
                 {
                 JOptionPane.showMessageDialog(null, "The Image was decoded Successfully!", 
                 "Success!", JOptionPane.INFORMATION_MESSAGE);
-                        decodeText.setText(message);
+                        jTextArea1.setText(message);
                         }
                 else
                 {
@@ -771,10 +751,6 @@ public class MainLayout extends javax.swing.JFrame {
         
     }//GEN-LAST:event_DecodeButtonActionPerformed
     
-    private void decodeTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decodeTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_decodeTextActionPerformed
-
     private void btnDetectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetectActionPerformed
         // TODO add your handling code here:
         if(this.pathImageDetect.getSelectedFile() != null)
@@ -787,26 +763,27 @@ public class MainLayout extends javax.swing.JFrame {
                 double[] x = new double[nbBlocks];
                 double[] chi = new double[nbBlocks];
                 double[] averageLSB = new double[nbBlocks];
-                if(type == 0)
-                {
-                    AverageLsb.averageLsbAttackTopToBottom(image, x, averageLSB, size);                 
-                    ChiSquare.chiSquareAttackTopToBottom(image, x, chi, size);
-                }
-                else if(type == 1)
-                {
-                    AverageLsb.averageLsbAttackLeftToRight(image, x, averageLSB, size);
-                    ChiSquare.chiSquareAttackLeftToRight(image, x, chi, size);
-                }
-                else if(type == 2) 
-                {
-                    AverageLsb.averageLsbAttackBottomToTop(image, x, averageLSB, size);
-                    ChiSquare.chiSquareAttackBottomToTop(image, x, chi, size);
-                }
-                else 
-                {
-                    AverageLsb.averageLsbAttackRightToLeft(image, x, averageLSB, size);
-                    ChiSquare.chiSquareAttackRightToLeft(image, x, chi, size);
-                }
+                AverageLsb.averageLsbAttackTopToBottom(image, x, averageLSB, size);                 
+                ChiSquare.chiSquareAttackTopToBottom(image, x, chi, size);
+//                if(type == 0)
+//                {
+//                    
+//                }
+//                else if(type == 1)
+//                {
+//                    AverageLsb.averageLsbAttackLeftToRight(image, x, averageLSB, size);
+//                    ChiSquare.chiSquareAttackLeftToRight(image, x, chi, size);
+//                }
+//                else if(type == 2) 
+//                {
+//                    AverageLsb.averageLsbAttackBottomToTop(image, x, averageLSB, size);
+//                    ChiSquare.chiSquareAttackBottomToTop(image, x, chi, size);
+//                }
+//                else 
+//                {
+//                    AverageLsb.averageLsbAttackRightToLeft(image, x, averageLSB, size);
+//                    ChiSquare.chiSquareAttackRightToLeft(image, x, chi, size);
+//                }
                 chiSquarePanel.removeAllPlots();
                 //chiSquarePanel.addLinePlot("Trung bình LSB", x, averageLSB);
                 BaseLabel title = new BaseLabel("Tấn công bằng phương pháp Chi bình phương",null, 0.5, 1.1);
@@ -845,12 +822,6 @@ public class MainLayout extends javax.swing.JFrame {
             this.detectImage.setIcon(new ImageIcon(this.pathImageDetect.getSelectedFile().toString()));
         }
     }//GEN-LAST:event_btnSelectImageDetect1ActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-        this.type = jComboBox1.getSelectedIndex();
-        System.out.println("box " + this.type);
-    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private BufferedImage getImage(String f)
 	{
@@ -912,11 +883,9 @@ public class MainLayout extends javax.swing.JFrame {
     private javax.swing.JButton btnGenKey;
     private javax.swing.JButton btnSaveKeyFolder;
     private javax.swing.JButton btnSelectImageDetect1;
-    private javax.swing.JTextField decodeText;
     private javax.swing.JLabel detectImage;
-    private javax.swing.JTextField encodeText;
+    private javax.swing.JTextArea encodeText;
     private javax.swing.JTabbedPane graphyTab;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
@@ -945,8 +914,11 @@ public class MainLayout extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel labelDecodeImage;
     private javax.swing.JLabel labelEncodeImage;
     private javax.swing.JButton privateKeyButton;
