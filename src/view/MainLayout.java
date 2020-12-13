@@ -626,7 +626,7 @@ public class MainLayout extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             if(this.pathSaveGenKey.getSelectedFile() != null) {
-                new GenerateKeys(1024).generateKeysToFile(this.pathSaveGenKey.getSelectedFile().toString(), this.pathSaveGenKey.getSelectedFile().toString());
+                new GenerateKeys(2048).generateKeysToFile(this.pathSaveGenKey.getSelectedFile().toString(), this.pathSaveGenKey.getSelectedFile().toString());
                 showMessageDialog(null, "Lưu key thành công"); 
             }
             else {
@@ -789,7 +789,7 @@ public class MainLayout extends javax.swing.JFrame {
                 double[] averageLSB = new double[nbBlocks];
                 if(type == 0)
                 {
-                    AverageLsb.averageLsbAttackTopToBottom(image, x, averageLSB, size);
+                    AverageLsb.averageLsbAttackTopToBottom(image, x, averageLSB, size);                 
                     ChiSquare.chiSquareAttackTopToBottom(image, x, chi, size);
                 }
                 else if(type == 1)
@@ -816,7 +816,7 @@ public class MainLayout extends javax.swing.JFrame {
                 chiSquarePanel.changePlotColor(0, Color.MAGENTA);
                 // chiSquarePanel.changePlotColor(1, Color.GREEN);
                 chiSquarePanel.addLegend("EAST");
-                chiSquarePanel.setAxisLabel(0, size+"-KB");
+                chiSquarePanel.setAxisLabel(0, size+"-B");
                 chiSquarePanel.setAxisLabel(1, "p");
                 
                 graphyTab.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -827,6 +827,7 @@ public class MainLayout extends javax.swing.JFrame {
             }
             catch (Exception e)
             {
+                System.out.println("err: "+ e);
                 e.printStackTrace();
                  JOptionPane.showMessageDialog(null, "Không thể đọc được file", 
                         "Error!", JOptionPane.ERROR_MESSAGE);

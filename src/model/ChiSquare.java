@@ -27,12 +27,17 @@ public class ChiSquare {
 		int[] values = new int[256];
 		double[] expectedValues = new double[128];
 		long[] pov = new long[128];
-		
+		System.out.println("bắt đầu lặp");
 		for(int i=0; i<values.length; i++)
 		{
 			values[i] = 1;
-			x[i] = i;
+			// x[i] = i; // x la so block
 		}
+                for (int i=0; i<x.length; i++)
+                {
+                    x[i] = i;
+                }
+                System.out.println("Đã xuống đây");
                 // 1. dau tien no se dem số lần xuất hiện các giá trị màu vào mảng values
                 // 2. No se chay tung hang hoac cot tuy theo dang tu tren xuong, duoi len, trai phai, phai trai thì cu 2048/lan chay
                 // 3. Neu sau khi dem het vượt ngưỡng size là block thi dung lại va xu ly Chi-Square
@@ -124,9 +129,12 @@ public class ChiSquare {
 		for(int i=0; i<values.length; i++)
 		{
 			values[i] = 1;
-			x[i] = i;
+			// x[i] = i;
 		}
-
+                for (int i=0; i<x.length; i++)
+                {
+                    x[i] = i;
+                }
 		for(int i=0; i<width; i++)
 		{
 			for(int j=0; j<height; j++)
@@ -214,9 +222,12 @@ public class ChiSquare {
 		for(int i=0; i<values.length; i++)
 		{
 			values[i] = 1;
-			x[i] = i;
+			//x[i] = i;
 		}
-
+                for (int i=0; i<x.length; i++)
+                {
+                    x[i] = i;
+                }
 		for(int j=height-1; j>=0; j--)
 		{
 			for(int i=width-1; i>=0; i--)
@@ -304,9 +315,12 @@ public class ChiSquare {
 		for(int i=0; i<values.length; i++)
 		{
 			values[i] = 1;
-			x[i] = i;
+			//x[i] = i;
 		}
-
+                for (int i=0; i<x.length; i++)
+                {
+                    x[i] = i;
+                }
 		for(int i=width-1; i>=0; i--)
 		{
 			for(int j=0; j<height; j++)

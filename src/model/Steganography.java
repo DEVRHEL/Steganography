@@ -12,10 +12,15 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
 import java.awt.image.DataBufferByte;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.util.Base64;
 import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
@@ -143,14 +148,32 @@ public class Steganography {
         // nhớ phải gen key
 	public String encrypt(String originalText, String key) {
 		try {
-			PublicKey publicKey = DemoRSA.getPublicKey(key);
-			
-			Cipher cipher = Cipher.getInstance("RSA");
-			cipher.init(Cipher.ENCRYPT_MODE, publicKey);
-			
-			byte[] byteEncrypted = cipher.doFinal(originalText.getBytes());
-			String encrypted = Base64.getEncoder().encodeToString(byteEncrypted);
-			return encrypted;
+                     // truoc khi sua //
+//			PublicKey publicKey = DemoRSA.getPublicKey(key);
+//			
+//			Cipher cipher = Cipher.getInstance("RSA");
+//			cipher.init(Cipher.ENCRYPT_MODE, publicKey);
+//			
+//			byte[] byteEncrypted = cipher.doFinal(originalText.getBytes());
+//			String encrypted = Base64.getEncoder().encodeToString(byteEncrypted);
+//			return encrypted;
+                     // truoc khi sua - end
+                     
+                     KeyGenerator generator = KeyGenerator.getInstance("AES");
+                    generator.init(128); // The AES key size in number of bits
+                    SecretKey secKey = generator.generateKey();
+                    PublicKey publicKey = DemoRSA.getPublicKey(key);
+                    Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+                    cipher.init(Cipher.PUBLIC_KEY, publicKey);
+                    byte[] encSecKey = cipher.doFinal(secKey.getEncoded());
+
+
+                    Cipher aesCipher = Cipher.getInstance("AES");
+                    aesCipher.init(Cipher.ENCRYPT_MODE, secKey);
+                    byte[] byteCipherText = aesCipher.doFinal(originalText.getBytes());
+
+                    return Base64.getEncoder().encodeToString(encSecKey) + "#" + Base64.getEncoder().encodeToString(byteCipherText);
+                                                                
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -159,13 +182,33 @@ public class Steganography {
 
 	public String decrypt(String encryptText, String key) {
 		try {
-			PrivateKey privateKey = DemoRSA.getPrivateKey(key);
-			
-			Cipher cipher = Cipher.getInstance("RSA");
-			cipher.init(Cipher.DECRYPT_MODE, privateKey);
-			
-			byte[] decrypted = cipher.doFinal(Base64.getDecoder().decode(encryptText));
-			return new String(decrypted);
+                        // truoc khi sua
+//			PrivateKey privateKey = DemoRSA.getPrivateKey(key);
+//			
+//			Cipher cipher = Cipher.getInstance("RSA");
+//			cipher.init(Cipher.DECRYPT_MODE, privateKey);
+//			
+//			byte[] decrypted = cipher.doFinal(Base64.getDecoder().decode(encryptText));
+//			return new String(decrypted);
+                        // truoc khi sua - end
+                        
+                        String[] split = encryptText.split("#");
+
+                    String encSecKey = split[0];
+                    String encText = split[1];
+                    PrivateKey privateKey = DemoRSA.getPrivateKey(key);
+                    byte[] bytesSecKey = Base64.getDecoder().decode(encSecKey);
+                    byte[] bytesText = Base64.getDecoder().decode(encText);
+
+                    Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
+                    cipher.init(Cipher.PRIVATE_KEY, privateKey);
+                    byte[] decSecKey = cipher.doFinal(bytesSecKey);
+                    SecretKey secKey = new SecretKeySpec(decSecKey , 0, decSecKey .length, "AES");
+
+                    Cipher aesCipher = Cipher.getInstance("AES");
+                    aesCipher.init(Cipher.DECRYPT_MODE, secKey);
+                    return new String(aesCipher.doFinal(bytesText));
+                    
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

@@ -31,6 +31,12 @@ public class DemoRSA {
     KeyFactory kf = KeyFactory.getInstance("RSA");
     return kf.generatePublic(spec);
   }
+//  public static PublicKey getEncryptKey(String PUBLIC_KEY_FILE) throws Exception {
+//    byte[] keyBytes = Files.readAllBytes(new File(PUBLIC_KEY_FILE).toPath());
+//    X509EncodedKeySpec spec = new X509EncodedKeySpec(keyBytes);
+//    KeyFactory kf = KeyFactory.getInstance("AES");
+//    return kf.generatePublic(spec);
+//  }
   
   public static void main(String[] args) throws Exception {
 //    PrivateKey privateKey = getPrivateKey();
