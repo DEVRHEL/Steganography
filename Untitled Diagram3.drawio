@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-12-15T07:47:16.382Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="CAb80pnyv2yR8PQ4E3qK" version="14.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-15T07:47:38.160Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="4T-QBrEqHIDFevr6VXA_" version="14.0.1" type="github">
   <diagram id="-4YFkd7q99eM0sd1RJYQ" name="Page-1">
     <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
       <root>
@@ -54,7 +54,7 @@
         <mxCell id="PwyOT1OCWD2OtprNkvKt-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="PwyOT1OCWD2OtprNkvKt-15" target="PwyOT1OCWD2OtprNkvKt-7">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="PwyOT1OCWD2OtprNkvKt-15" value="Đồ thị từ mảng kết quả" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;direction=south;" vertex="1" parent="1">
+        <mxCell id="PwyOT1OCWD2OtprNkvKt-15" value="Đồ thị xác suất từ mảng kết quả" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;direction=south;" vertex="1" parent="1">
           <mxGeometry x="330" y="580" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="PwyOT1OCWD2OtprNkvKt-16" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="PwyOT1OCWD2OtprNkvKt-13">
