@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-12-15T06:27:32.022Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="CeNZrBVuOf3m_Hs8btgc" version="14.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-15T06:29:56.526Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="hnz1dS1kQRnwdirjF0Zy" version="14.0.1" type="github">
   <diagram id="jLeRlHcbZGFv7hPvxuyy" name="Page-1">
     <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
       <root>
@@ -13,7 +13,7 @@
         <mxCell id="MST21hSJ7ybLwCSHI-1t-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="MST21hSJ7ybLwCSHI-1t-5" target="MST21hSJ7ybLwCSHI-1t-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="MST21hSJ7ybLwCSHI-1t-5" value="Chọn ảnh C,&lt;br&gt;Message M,&lt;br&gt;Public Key K" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+        <mxCell id="MST21hSJ7ybLwCSHI-1t-5" value="Chọn ảnh C,&lt;br&gt;Private Key K" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
           <mxGeometry x="330" y="120" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="MST21hSJ7ybLwCSHI-1t-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="MST21hSJ7ybLwCSHI-1t-8">
