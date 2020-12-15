@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-12-15T04:48:03.333Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="0WH_TJ8IF_vz_meH4h1W" version="14.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-15T05:17:55.540Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="EFkIJUHvgrakmoI-VFvK" version="14.0.1" type="github">
   <diagram id="znqmKikm2OQu4AAyznZ4" name="Page-1">
     <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -28,7 +28,7 @@
           <mxGeometry x="315" y="200" width="150" height="80" as="geometry" />
         </mxCell>
         <mxCell id="rsEwW4tAbGOP4yWRJ9ht-6" value="Kết thúc&lt;br&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="340" y="610" width="100" height="50" as="geometry" />
+          <mxGeometry x="410" y="610" width="100" height="50" as="geometry" />
         </mxCell>
         <mxCell id="rsEwW4tAbGOP4yWRJ9ht-8" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -54,8 +54,17 @@
         <mxCell id="rsEwW4tAbGOP4yWRJ9ht-13" value="True" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
           <mxGeometry x="390" y="280" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-14" value="M&#39; = Mã hóa RSA(A),&lt;br&gt;M&#39;&#39; = Mã hóa AES(M)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rsEwW4tAbGOP4yWRJ9ht-14" target="rsEwW4tAbGOP4yWRJ9ht-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-14" value="M&#39; = Mã hóa RSA(A),&lt;br&gt;M&#39;&#39; = Mã hóa AES(M),&lt;br&gt;M = M&#39;+&#39;#&#39;+M&#39;&#39;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="470" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="rsEwW4tAbGOP4yWRJ9ht-16" target="rsEwW4tAbGOP4yWRJ9ht-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-16" value="Giấu M vào C theo cơ chế LSB" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="400" width="260" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
