@@ -1,14 +1,61 @@
-<mxfile host="app.diagrams.net" modified="2020-12-15T02:21:41.751Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="a-f7lXdkRZRZRylCzHpU" version="14.0.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-15T04:48:03.333Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="0WH_TJ8IF_vz_meH4h1W" version="14.0.1" type="github">
   <diagram id="znqmKikm2OQu4AAyznZ4" name="Page-1">
     <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="g1bdOhSWP10qkfBLjo13-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="360" y="140" width="120" height="60" as="geometry" />
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rsEwW4tAbGOP4yWRJ9ht-1" target="rsEwW4tAbGOP4yWRJ9ht-2">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="g1bdOhSWP10qkfBLjo13-2" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="200" y="350" width="80" height="80" as="geometry" />
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-1" value="Bắt đầu" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="50" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rsEwW4tAbGOP4yWRJ9ht-2" target="rsEwW4tAbGOP4yWRJ9ht-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-2" value="Chọn ảnh C,&lt;br&gt;Message M,&lt;br&gt;Public Key K" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="rsEwW4tAbGOP4yWRJ9ht-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rsEwW4tAbGOP4yWRJ9ht-4" target="rsEwW4tAbGOP4yWRJ9ht-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-4" value="&lt;br&gt;Kiểm tra các điều kiện C, M, K" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="315" y="200" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-6" value="Kết thúc&lt;br&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="610" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-8" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="240" as="sourcePoint" />
+            <mxPoint x="210" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-9" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="rsEwW4tAbGOP4yWRJ9ht-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="210" y="635" as="sourcePoint" />
+            <mxPoint x="440" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-10" value="False" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="220" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="rsEwW4tAbGOP4yWRJ9ht-11" target="rsEwW4tAbGOP4yWRJ9ht-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-11" value="Tạo key AES A" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-13" value="True" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="280" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rsEwW4tAbGOP4yWRJ9ht-14" value="M&#39; = Mã hóa RSA(A),&lt;br&gt;M&#39;&#39; = Mã hóa AES(M)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="300" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
