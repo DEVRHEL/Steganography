@@ -727,7 +727,7 @@ public class MainLayout extends javax.swing.JFrame {
                 stat_name = stat_name.substring(0, stat_name.length()-4);
                 String message = this.steg.decode(stat_path, stat_name, this.pathKeyDecode.getSelectedFile().toString());
                 System.out.println(stat_path + ", " + stat_name);
-                if(message != "")
+                if(message != "" && message != null)
                 {
                 JOptionPane.showMessageDialog(null, "The Image was decoded Successfully!", 
                 "Success!", JOptionPane.INFORMATION_MESSAGE);
