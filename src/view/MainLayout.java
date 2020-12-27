@@ -395,12 +395,12 @@ public class MainLayout extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(labelEncodeImage, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1)
                         .addGap(18, 18, 18)
                         .addComponent(selectImageEncodeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -471,9 +471,9 @@ public class MainLayout extends javax.swing.JFrame {
                         .addComponent(privateKeyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(DecodeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(63, 63, 63)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jScrollPane3))
                     .addComponent(labelDecodeImage, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(82, Short.MAX_VALUE))
@@ -717,9 +717,10 @@ public class MainLayout extends javax.swing.JFrame {
 
     private void DecodeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DecodeButtonActionPerformed
         // TODO add your handling code here:
-        File directory = this.pathImageDecode.getSelectedFile();
-        if (this.pathKeyDecode.getSelectedFile().toString() != null && directory != null){
+        
+        if (this.pathKeyDecode.getSelectedFile() != null && this.pathImageDecode.getSelectedFile() != null){
             try{
+                File directory = this.pathImageDecode.getSelectedFile();
                 String image = directory.getPath();
                 String stat_name = directory.getName();
                 String stat_path = directory.getPath();
@@ -727,7 +728,7 @@ public class MainLayout extends javax.swing.JFrame {
                 stat_name = stat_name.substring(0, stat_name.length()-4);
                 String message = this.steg.decode(stat_path, stat_name, this.pathKeyDecode.getSelectedFile().toString());
                 System.out.println(stat_path + ", " + stat_name);
-                if(message != "" && message != null)
+                if(message != "" && message != null && !message.isEmpty())
                 {
                 JOptionPane.showMessageDialog(null, "The Image was decoded Successfully!", 
                 "Success!", JOptionPane.INFORMATION_MESSAGE);
@@ -810,6 +811,10 @@ public class MainLayout extends javax.swing.JFrame {
                         "Error!", JOptionPane.ERROR_MESSAGE);
             }
 	}
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Mời bạn nhập file ảnh cần phân tích", "Error!", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnDetectActionPerformed
 
     private void btnSelectImageDetect1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectImageDetect1ActionPerformed
